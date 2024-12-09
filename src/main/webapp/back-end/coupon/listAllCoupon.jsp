@@ -73,21 +73,21 @@
 	<c:forEach var="couponVO" items="${list}" begin="<%=pageIndex%>" end="<%=pageIndex+rowsPerPage-1%>">
 		
 		<tr>
-			<td>${couponVO.cop_id}</td>
-			<td>${couponVO.cop_code}</td>
-			<td>${couponVO.crt_date}</td>
-			<td>${couponVO.end_date}</td>
+			<td>${couponVO.copid}</td>
+			<td>${couponVO.copcode}</td>
+			<td>${couponVO.crtdate}</td>
+			<td>${couponVO.enddate}</td>
 			<td>${couponVO.discount}</td>
 			<td>
 			  <FORM METHOD="post" ACTION="<%=request.getContextPath()%>/back-end/coupon/coupon.do" style="margin-bottom: 0px;">
 			     <input type="submit" value="修改">
-			     <input type="hidden" name="cop_id"  value="${couponVO.cop_id}">
+			     <input type="hidden" name="copid"  value="${couponVO.copid}">
 			     <input type="hidden" name="action"	value="getOne_For_Update"></FORM>
 			</td>
 			<td>
 			  <FORM METHOD="post" ACTION="<%=request.getContextPath()%>/back-end/coupon/coupon.do" style="margin-bottom: 0px;">
 			     <input type="submit" value="刪除">
-			     <input type="hidden" name="cop_id"  value="${couponVO.cop_id}">
+			     <input type="hidden" name="copid"  value="${couponVO.copid}">
 			     <input type="hidden" name="action" value="delete"></FORM>
 			</td>
 		</tr>

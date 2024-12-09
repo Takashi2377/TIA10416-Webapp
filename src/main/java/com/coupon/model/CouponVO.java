@@ -3,35 +3,35 @@ package com.coupon.model;
 import java.sql.Date;
 
 public class CouponVO {
-	private Integer cop_id;
-	private String cop_code;
-	private Date crt_date;
-	private Date end_date;
+	private Integer copid;
+	private String copcode;
+	private Date crtdate;
+	private Date enddate;
 	private Integer discount;
 	
-	public Integer getCop_id() {
-		return cop_id;
+	public Integer getCopid() {
+		return copid;
 	}
-	public void setCop_id(Integer cop_id) {
-		this.cop_id = cop_id;
+	public void setCopid(Integer copid) {
+		this.copid = copid;
 	}
-	public String getCop_code() {
-		return cop_code;
+	public String getCopcode() {
+		return copcode;
 	}
-	public void setCop_code(String cop_code) {
-		this.cop_code = cop_code;
+	public void setCopcode(String copcode) {
+		this.copcode = copcode;
 	}
-	public Date getCrt_date() {
-		return crt_date;
+	public Date getCrtdate() {
+		return crtdate;
 	}
-	public void setCrt_date(Date crt_date) {
-		this.crt_date = crt_date;
+	public void setCrtdate(Date crtdate) {
+		this.crtdate = crtdate;
 	}
-	public Date getEnd_date() {
-		return end_date;
+	public Date getEnddate() {
+		return enddate;
 	}
-	public void setEnd_date(Date end_date) {
-		this.end_date = end_date;
+	public void setEnddate(Date enddate) {
+		this.enddate = enddate;
 	}
 	public Integer getDiscount() {
 		return discount;

@@ -50,11 +50,10 @@
 <ul>
   <li><a href='listAllCoupon.jsp'>List</a> all Coupons.  <br><br></li>
   
-  
   <li>
     <FORM METHOD="post" ACTION="<%=request.getContextPath()%>/back-end/coupon/coupon.do" >
         <b>輸入優惠券編號 (ex. 1、2、3):</b>
-        <input type="text" name="cop_id">
+        <input type="text" name="copid">
         <input type="hidden" name="action" value="getOne_For_Display">
         <input type="submit" value="送出">
     </FORM>
@@ -65,9 +64,9 @@
   <li>
      <FORM METHOD="post" ACTION="<%=request.getContextPath()%>/back-end/coupon/coupon.do" >
        <b>選擇優惠券編號:</b>
-       <select size="1" name="cop_id">
+       <select size="1" name="copid">
          <c:forEach var="couponVO" items="${couSvc.all}" > 
-          <option value="${couponVO.cop_id}">${couponVO.cop_id}
+          <option value="${couponVO.copid}">${couponVO.copid}
          </c:forEach>   
        </select>
        <input type="hidden" name="action" value="getOne_For_Display">
@@ -78,9 +77,9 @@
   <li>
      <FORM METHOD="post" ACTION="<%=request.getContextPath()%>/back-end/coupon/coupon.do" >
        <b>選擇優惠碼:</b>
-       <select size="1" name="cop_id">
-         <c:forEach var="couponVO" items="${couSvc.all}" > 
-          <option value="${couponVO.cop_id}">${couponVO.cop_code}
+       <select size="1" name="copid">
+         <c:forEach var="couponVO" items="${couSvc.all}" >
+          <option value="${couponVO.copid}">${couponVO.copcode}
          </c:forEach>   
        </select>
        <input type="hidden" name="action" value="getOne_For_Display">

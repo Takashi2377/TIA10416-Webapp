@@ -73,11 +73,11 @@
 	
 	<tr>
 		<td>優惠碼:</td>
-		<td><input type="TEXT" name="cop_code" value="<%= (couponVO==null)? "FIRSTBUYDC777" : couponVO.getCop_code()%>" size="45"/></td>
+		<td><input type="TEXT" name="copcode" value="<%= (couponVO==null)? "FIRSTBUYDC777" : couponVO.getCopcode()%>" size="45"/></td>
 	</tr>
 	<tr>
 		<td>有效日期:</td>
-		<td><input name="end_date" id="f_date1" type="text" ></td>
+		<td><input name="enddate" id="f_date1" type="text" ></td>
 	</tr>
 	<tr>
 		<td>折扣金額:</td>
@@ -96,11 +96,11 @@
 <!-- =========================================以下為 datetimepicker 之相關設定========================================== -->
 
 <% 
-  java.sql.Date end_date = null;
+  java.sql.Date enddate = null;
   try {
-	  end_date = couponVO.getEnd_date();
+	  enddate = couponVO.getEnddate();
    } catch (Exception e) {
-	   end_date = new java.sql.Date(System.currentTimeMillis() + (7 * 24 * 60 * 60 * 1000L));
+	   enddate = new java.sql.Date(System.currentTimeMillis() + (7 * 24 * 60 * 60 * 1000L));
    }
 %>
 <link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/datetimepicker/jquery.datetimepicker.css" />
@@ -123,7 +123,7 @@
 	       timepicker:false,       //timepicker:true,
 	       step: 1,                //step: 60 (這是timepicker的預設間隔60分鐘)
 	       format:'Y-m-d',         //format:'Y-m-d H:i:s',
-		   value: '<%=end_date%>', // value:   new Date(),
+		   value: '<%=enddate%>', // value:   new Date(),
            //disabledDates:        ['2017/06/08','2017/06/09','2017/06/10'], // 去除特定不含
            //startDate:	            '2017/07/10',  // 起始日
            //minDate:               '-1970-01-01', // 去除今日(不含)之前

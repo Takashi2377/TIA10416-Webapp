@@ -69,15 +69,15 @@
 <table>
 	<tr>
 		<td>優惠券編號:<font color=red><b>*</b></font></td>
-		<td><%=couponVO.getCop_id()%></td>
+		<td><%=couponVO.getCopid()%></td>
 	</tr>
 	<tr>
 		<td>優惠碼</td>
-		<td><input type="TEXT" name="cop_code" value="<%=couponVO.getCop_code()%>" size="45"/></td>
+		<td><input type="TEXT" name="copcode" value="<%=couponVO.getCopcode()%>" size="45"/></td>
 	</tr>
 	<tr>
 		<td>有效日期:</td>
-		<td><input name="end_date" id="f_date1" type="text" ></td> 
+		<td><input name="enddate" id="f_date1" type="text" ></td> 
 	</tr>
 	<tr>
 		<td>折扣金額:</td>
@@ -87,7 +87,7 @@
 </table>
 <br>
 <input type="hidden" name="action" value="update">
-<input type="hidden" name="cop_id" value="<%=couponVO.getCop_id()%>">
+<input type="hidden" name="copid" value="<%=couponVO.getCopid()%>">
 <input type="submit" value="送出修改"></FORM>
 </body>
 
@@ -115,7 +115,7 @@
  	       timepicker:false,       //timepicker:true,
  	       step: 1,                //step: 60 (這是timepicker的預設間隔60分鐘)
  	       format:'Y-m-d',         //format:'Y-m-d H:i:s',
- 		   value: '<%=couponVO.getEnd_date()%>', // value:   new Date(),
+ 		   value: '<%=couponVO.getEnddate()%>', // value:   new Date(),
            //disabledDates:        ['2017/06/08','2017/06/09','2017/06/10'], // 去除特定不含
            //startDate:	            '2017/07/10',  // 起始日
            //minDate:               '-1970-01-01', // 去除今日(不含)之前

@@ -63,10 +63,10 @@
 		<th>§é¦©ª÷ÃB</th>
 	</tr>
 	<tr>
-		<td><%=couponVO.getCop_id()%></td>
-		<td><%=couponVO.getCop_code()%></td>
-		<td><%=couponVO.getCrt_date()%></td>
-		<td><%=couponVO.getEnd_date()%></td>
+		<td><%=couponVO.getCopid()%></td>
+		<td><%=couponVO.getCopcode()%></td>
+		<td><%=couponVO.getCrtdate()%></td>
+		<td><%=couponVO.getEnddate()%></td>
 		<td><%=couponVO.getDiscount()%></td>
 	</tr>
 </table>

@@ -11,37 +11,37 @@ public class CouponService {
 		dao = new CouponDAO();
 	}
 
-	public CouponVO addCoupon(String cop_code, Date end_date, Integer discount) {
+	public CouponVO addCoupon(String copcode, Date enddate, Integer discount) {
 
 		CouponVO couponVO = new CouponVO();
 
-		couponVO.setCop_code(cop_code);
-		couponVO.setEnd_date(end_date);
+		couponVO.setCopcode(copcode);
+		couponVO.setEnddate(enddate);
 		couponVO.setDiscount(discount);
 		dao.insert(couponVO);
 
 		return couponVO;
 	}
 
-	public CouponVO updateCoupon(String cop_code, java.sql.Date end_date, Integer discount, Integer cop_id) {
+	public CouponVO updateCoupon(String copcode, java.sql.Date enddate, Integer discount, Integer copid) {
 
 		CouponVO couponVO = new CouponVO();
 
-		couponVO.setCop_code(cop_code);
-		couponVO.setEnd_date(end_date);
+		couponVO.setCopcode(copcode);
+		couponVO.setEnddate(enddate);
 		couponVO.setDiscount(discount);
-		couponVO.setCop_id(cop_id);
+		couponVO.setCopid(copid);
 		dao.update(couponVO);
 
-		return dao.findByPrimaryKey(cop_id);
+		return dao.findByPrimaryKey(copid);
 	}
 
-	public void deleteCoupon(Integer cop_id) {
-		dao.delete(cop_id);
+	public void deleteCoupon(Integer copid) {
+		dao.delete(copid);
 	}
 
-	public CouponVO getOneCoupon(Integer cop_id) {
-		return dao.findByPrimaryKey(cop_id);
+	public CouponVO getOneCoupon(Integer copid) {
+		return dao.findByPrimaryKey(copid);
 	}
 
 	public List<CouponVO> getAll() {

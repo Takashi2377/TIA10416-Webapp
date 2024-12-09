@@ -20,12 +20,10 @@ public class CouponDAO implements CouponDAO_interface {
 		}
 	}
 
-//	private static final String INSERT_STMT = "INSERT INTO coupon (cop_code,crt_date,end_date,discount) VALUES (?, ?, ?, ?)";
 	private static final String INSERT_STMT = "INSERT INTO coupon (cop_code,end_date,discount) VALUES (?, ?, ?)";
 	private static final String GET_ALL_STMT = "SELECT * FROM coupon order by cop_id";
 	private static final String GET_ONE_STMT = "SELECT * FROM coupon where cop_id = ?";
 	private static final String DELETE = "DELETE FROM coupon where cop_id = ?";
-//	private static final String UPDATE = "UPDATE coupon set cop_code=?, crt_date=?, end_date=?, discount=? where cop_id = ?";
 	private static final String UPDATE = "UPDATE coupon set cop_code=?, end_date=?, discount=? where cop_id = ?";
 
 	@Override
@@ -38,9 +36,8 @@ public class CouponDAO implements CouponDAO_interface {
 			con = ds.getConnection();
 			pstmt = con.prepareStatement(INSERT_STMT);
 
-			pstmt.setString(1, couponVO.getCop_code());
-//			pstmt.setDate(2, couponVO.getCrt_date());
-			pstmt.setDate(2, couponVO.getEnd_date());
+			pstmt.setString(1, couponVO.getCopcode());
+			pstmt.setDate(2, couponVO.getEnddate());
 			pstmt.setInt(3, couponVO.getDiscount());
 
 			pstmt.executeUpdate();
@@ -78,11 +75,10 @@ public class CouponDAO implements CouponDAO_interface {
 			con = ds.getConnection();
 			pstmt = con.prepareStatement(UPDATE);
 
-			pstmt.setString(1, couponVO.getCop_code());
-//			pstmt.setDate(2, couponVO.getCrt_date());
-			pstmt.setDate(2, couponVO.getEnd_date());
+			pstmt.setString(1, couponVO.getCopcode());
+			pstmt.setDate(2, couponVO.getEnddate());
 			pstmt.setInt(3, couponVO.getDiscount());
-			pstmt.setInt(4, couponVO.getCop_id());
+			pstmt.setInt(4, couponVO.getCopid());
 
 			pstmt.executeUpdate();
 
@@ -110,7 +106,7 @@ public class CouponDAO implements CouponDAO_interface {
 	}
 
 	@Override
-	public void delete(Integer cop_id) {
+	public void delete(Integer copid) {
 		Connection con = null;
 		PreparedStatement pstmt = null;
 
@@ -119,7 +115,7 @@ public class CouponDAO implements CouponDAO_interface {
 			con = ds.getConnection();
 			pstmt = con.prepareStatement(DELETE);
 
-			pstmt.setInt(1, cop_id);
+			pstmt.setInt(1, copid);
 
 			pstmt.executeUpdate();
 
@@ -147,7 +143,7 @@ public class CouponDAO implements CouponDAO_interface {
 	}
 
 	@Override
-	public CouponVO findByPrimaryKey(Integer cop_id) {
+	public CouponVO findByPrimaryKey(Integer copid) {
 		CouponVO couponVO = null;
 		Connection con = null;
 		PreparedStatement pstmt = null;
@@ -158,16 +154,16 @@ public class CouponDAO implements CouponDAO_interface {
 			con = ds.getConnection();
 			pstmt = con.prepareStatement(GET_ONE_STMT);
 
-			pstmt.setInt(1, cop_id);
+			pstmt.setInt(1, copid);
 
 			rs = pstmt.executeQuery();
 
 			while (rs.next()) {
 				couponVO = new CouponVO();
-				couponVO.setCop_id(rs.getInt("cop_id"));
-				couponVO.setCop_code(rs.getString("cop_code"));
-				couponVO.setCrt_date(rs.getDate("crt_date"));
-				couponVO.setEnd_date(rs.getDate("end_date"));
+				couponVO.setCopid(rs.getInt("cop_id"));
+				couponVO.setCopcode(rs.getString("cop_code"));
+				couponVO.setCrtdate(rs.getDate("crt_date"));
+				couponVO.setEnddate(rs.getDate("end_date"));
 				couponVO.setDiscount(rs.getInt("discount"));
 			}
 
@@ -218,10 +214,10 @@ public class CouponDAO implements CouponDAO_interface {
 
 			while (rs.next()) {
 				couponVO = new CouponVO();
-				couponVO.setCop_id(rs.getInt("cop_id"));
-				couponVO.setCop_code(rs.getString("cop_code"));
-				couponVO.setCrt_date(rs.getDate("crt_date"));
-				couponVO.setEnd_date(rs.getDate("end_date"));
+				couponVO.setCopid(rs.getInt("cop_id"));
+				couponVO.setCopcode(rs.getString("cop_code"));
+				couponVO.setCrtdate(rs.getDate("crt_date"));
+				couponVO.setEnddate(rs.getDate("end_date"));
 				couponVO.setDiscount(rs.getInt("discount"));
 				list.add(couponVO); // Store the row in the list
 			}
